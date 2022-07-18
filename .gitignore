@@ -1,0 +1,11 @@
+/node_modules
+/build
+/.template
+.DS_Store
+
+lib
+storybook-static
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
