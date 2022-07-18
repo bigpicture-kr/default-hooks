@@ -4,6 +4,7 @@ WORKDIR /app
 ADD . .
 
 RUN yarn install
+RUN yarn build
 RUN yarn storybook:build
 
 ARG NPM_TOKEN

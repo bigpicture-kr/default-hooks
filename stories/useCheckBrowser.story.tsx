@@ -13,6 +13,6 @@ const Demo = () => {
   );
 };
 
-storiesOf("Sensors/useNetworkState", module)
+storiesOf("Sensors/useCheckBrowser", module)
   .add("Docs", () => <ShowDocs md={require("../docs/useCheckBrowser.md")} />)
   .add("Demo", () => <Demo />);
