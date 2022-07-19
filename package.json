@@ -1,6 +1,6 @@
 {
   "name": "default-hooks",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "the most basic hooks needed to produce a react application",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -8,6 +8,12 @@
   "files": [
     "lib/",
     "esm/"
+  ],
+  "keywords": [
+    "react",
+    "hooks",
+    "utils",
+    "default"
   ],
   "types": "lib/index.d.ts",
   "typings": "lib/index.d.ts",
