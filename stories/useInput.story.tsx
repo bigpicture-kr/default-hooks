@@ -4,7 +4,7 @@ import { useInput } from "../src";
 import ShowDocs from "./util/ShowDocs";
 
 const Demo = () => {
-  const name = useInput("initialName");
+  const [name, setName] = useInput("initialName");
   return (
     <div>
       <div>
@@ -13,6 +13,16 @@ const Demo = () => {
       </div>
 
       <span>this is real state : {name.value}</span>
+
+      <div>
+        <button
+          onClick={() => {
+            setName("");
+          }}
+        >
+          click to clear
+        </button>
+      </div>
     </div>
   );
 };

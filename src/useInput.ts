@@ -1,12 +1,22 @@
-import { FormEvent, useState } from "react";
+import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 
 const useInput = (
   initialValue: string,
   validator?: (value: string) => boolean
-) => {
+): [
+  {
+    value: string;
+    onChange: (
+      event: FormEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => void;
+  },
+  Dispatch<SetStateAction<string>>
+] => {
   const [value, setValue] = useState<string>(initialValue);
 
-  const onChange = (event: FormEvent<HTMLInputElement>) => {
+  const onChange = (
+    event: FormEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { currentTarget } = event;
     let willUpdate = true;
 
@@ -19,7 +29,7 @@ const useInput = (
     }
   };
 
-  return { value, onChange };
+  return [{ value, onChange }, setValue];
 };
 
 export default useInput;
