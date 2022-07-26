@@ -2,34 +2,69 @@ import { Dispatch, FormEvent, SetStateAction, useState } from "react";
 
 const useInput = (
   initialValue: string,
-  validator?: (value: string) => boolean
-): [
-  {
+  validators?: {
+    validator: (value: string) => boolean;
+    errorText: string;
+    option?: {
+      hard: boolean;
+    };
+  }[]
+): {
+  value: {
     value: string;
     onChange: (
       event: FormEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => void;
-  },
-  Dispatch<SetStateAction<string>>
-] => {
+  };
+  setValue: Dispatch<SetStateAction<string>>;
+  error: {
+    error: string;
+    setError: Dispatch<SetStateAction<string>>;
+  };
+} => {
   const [value, setValue] = useState<string>(initialValue);
+  const [error, setError] = useState<string>("");
 
   const onChange = (
     event: FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { currentTarget } = event;
-    let willUpdate = true;
+    const {
+      currentTarget: { value: _value }
+    } = event;
 
-    if (validator) {
-      willUpdate = validator(currentTarget.value);
-    }
+    // 에러였던 요소들 다시 타이핑 시작하면 에러 해제
+    if (error !== "") setError("");
+    if (validators) {
+      let _errorText = "";
 
-    if (willUpdate) {
-      setValue(currentTarget.value);
+      for (let index = 0; index < validators.length; index += 1) {
+        const validator = validators[index];
+
+        if (!validator.validator(_value)) {
+          _errorText = validator.errorText;
+          /*
+           hard: true / error: true -> setValue 안 해준다.
+           나머지는 걍 해준다.
+          */
+          if (!validator.option?.hard && _errorText !== "") setValue(_value);
+          break;
+        }
+
+        setValue(_value);
+      }
+      if (_errorText !== "") {
+        setError(_errorText);
+      }
+    } else {
+      setValue(_value);
     }
   };
 
-  return [{ value, onChange }, setValue];
+  return {
+    value: { value, onChange },
+    setValue,
+    error: { error, setError }
+  };
 };
 
 export default useInput;
