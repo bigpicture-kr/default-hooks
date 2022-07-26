@@ -2,26 +2,38 @@ import { storiesOf } from "@storybook/react";
 import * as React from "react";
 import { useInput } from "../src";
 import ShowDocs from "./util/ShowDocs";
+import Validator from "./util/Validator";
 
 const Demo = () => {
-  const [name, setName] = useInput("initialName");
+  const LIMIT = 10;
+  const name = useInput("initialName", [
+    {
+      validator: Validator.underLengthString(LIMIT),
+      errorText: `type under ${LIMIT}`
+    }
+  ]);
+  const { value, setValue, error } = name;
   return (
     <div>
       <div>
         <span>what's your name</span>
-        <input {...name} />
+        <input {...value} />
       </div>
 
-      <span>this is real state : {name.value}</span>
+      <span>this is real state : {value.value}</span>
 
       <div>
         <button
           onClick={() => {
-            setName("");
+            setValue("");
           }}
         >
           click to clear
         </button>
+      </div>
+
+      <div>
+        <span>this is error text: {error.error}</span>
       </div>
     </div>
   );
