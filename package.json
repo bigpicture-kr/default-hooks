@@ -43,6 +43,7 @@
     "type": "git",
     "url": "https://github.com/bigpicture-kr/default-hooks"
   },
+  "homepage": "http://default-hooks.bigpicture.team/",
   "bugs": {
     "url": "https://github.com/bigpicture-kr/default-hooks/issues"
   },
