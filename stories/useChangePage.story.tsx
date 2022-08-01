@@ -2,7 +2,8 @@ import { storiesOf } from "@storybook/react";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useChangePage } from "../src";
-import { FlexBox, FlexCenter } from "./constants/Common.style";
+import { FlexBox, FlexCenter, SizedBox } from "./constants/Common.style";
+import { GlobalStyle } from "./constants/Global.style";
 import ShowDocs from "./util/ShowDocs";
 
 const Demo = () => {
@@ -17,46 +18,61 @@ const Demo = () => {
   );
 
   return (
-    <FlexCenter>
-      <button
-        title="go previous page"
-        onClick={() => {
-          handler("prev");
-        }}
-        disabled={disabled.prev}
-      >
-        {"<"}
-      </button>
+    <FlexCenter direction="column">
+      <span>currentPage is: {currentPage + 1}</span>
+      <SizedBox height={10} />
+      <FlexCenter>
+        <PageButton
+          title="go previous page"
+          onClick={() => {
+            handler("prev");
+          }}
+          disabled={disabled.prev}
+        >
+          {"<"}
+        </PageButton>
 
-      <FlexBox gap={5}>
-        {[...Array(10)].map((_, index) => (
-          <Page
-            key={index}
-            selected={index === currentPage}
-            onClick={() => [setCurrentPage(index)]}
-          >
-            {index + 1}
-          </Page>
-        ))}
-      </FlexBox>
-      <button
-        title="go next page"
-        onClick={() => {
-          handler("next");
-        }}
-        disabled={disabled.next}
-      >
-        {">"}
-      </button>
+        <FlexBox gap={10}>
+          {[...Array(TOTAL_PAGE)].map((_, index) => (
+            <Page
+              key={index}
+              selected={index === currentPage}
+              onClick={() => [setCurrentPage(index)]}
+            >
+              {index + 1}
+            </Page>
+          ))}
+        </FlexBox>
+        <PageButton
+          title="go next page"
+          onClick={() => {
+            handler("next");
+          }}
+          disabled={disabled.next}
+        >
+          {">"}
+        </PageButton>
+      </FlexCenter>
     </FlexCenter>
   );
 };
 
 storiesOf("Sensors/useChangePage", module)
   .add("Docs", () => <ShowDocs md={require("../docs/useChangePage.md")} />)
-  .add("Demo", () => <Demo />);
+  .add("Demo", () => (
+    <>
+      <GlobalStyle />
+      <Demo />
+    </>
+  ));
 
-const Page = styled.a<{ selected: boolean }>`
-  cursor: pointer;
+const PageButton = styled.button`
+  padding: 6px;
+
+  border: 1px solid;
+  border-radius: 5px;
+`;
+
+const Page = styled.button<{ selected: boolean }>`
   color: ${({ selected }) => (selected ? "green" : "black")};
 `;
