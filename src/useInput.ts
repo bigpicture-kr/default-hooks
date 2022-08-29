@@ -1,4 +1,4 @@
-import { Dispatch, FormEvent, SetStateAction, useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useState } from "react";
 
 const useInput = (
   initialValue: string,
@@ -13,7 +13,7 @@ const useInput = (
   value: {
     value: string;
     onChange: (
-      event: FormEvent<HTMLInputElement | HTMLTextAreaElement>
+      event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
     ) => void;
   };
   setValue: Dispatch<SetStateAction<string>>;
@@ -26,7 +26,7 @@ const useInput = (
   const [error, setError] = useState<string>("");
 
   const onChange = (
-    event: FormEvent<HTMLInputElement | HTMLTextAreaElement>
+    event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => {
     const {
       currentTarget: { value: _value }
