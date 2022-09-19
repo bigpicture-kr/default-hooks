@@ -6,7 +6,7 @@
 import { useInterSection } from "default-hooks";
 
 const Demo = () => {
-  const intersectionRef = React.useRef<HTMLDivElement>(null);
+  const intersectionRef = React.useRef < HTMLDivElement > null;
 
   const intersection = useInterSection(intersectionRef, {
     root: null,
@@ -33,5 +33,4 @@ const Demo = () => {
     </SizedBox>
   );
 };
-
 ```
