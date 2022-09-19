@@ -41,6 +41,7 @@
   - [`useCountDown`](./docs/useCountDown.md) &mdash; get the changing times
   - [`useChangePage`](./docs/useChangePage.md) &mdash; get the changing page
   - [`useMouseHover`](./docs/useMouseHover.md) &mdash; get the state of hover for some element
+  - [`useInterSection`](./docs/useInterSection.md) &mdash; check intersect with target element
 
 - [**Utils**](./docs/Utils.md)
   - [`useCheckBrowser`](./docs/useCheckBrowser.md) &mdash; get the browser where you logged in now

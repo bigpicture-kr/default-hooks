@@ -3,9 +3,11 @@ import styled from "styled-components";
 export const SizedBox = styled.div<{
   height?: number;
   width?: number;
+  bgColor?: string;
 }>`
   ${({ height }) => height && `height: ${height}px;`}
   ${({ width }) => width && `width: ${width}px;`}
+  ${({ bgColor }) => bgColor && `background-color: ${bgColor};`}
 `;
 
 export const FlexBox = styled.div<{
