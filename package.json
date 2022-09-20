@@ -1,6 +1,6 @@
 {
   "name": "default-hooks",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "the most basic hooks needed to produce a react application",
   "main": "lib/index.js",
   "module": "esm/index.js",
