@@ -11,7 +11,7 @@ const Demo = () => {
   const TOTAL_PAGE = 10;
   const [currentPage, setCurrentPage] = useState<number>(0);
 
-  const { handler, disabled } = useChangePage(
+  const { handler, disabled, title } = useChangePage(
     currentPage,
     setCurrentPage,
     TOTAL_PAGE
@@ -23,11 +23,11 @@ const Demo = () => {
       <SizedBox height={10} />
       <FlexCenter>
         <PageButton
-          title="go previous page"
           onClick={() => {
             handler("prev");
           }}
           disabled={disabled.prev}
+          title={title.prev}
         >
           {"<"}
         </PageButton>
@@ -44,11 +44,11 @@ const Demo = () => {
           ))}
         </FlexBox>
         <PageButton
-          title="go next page"
           onClick={() => {
             handler("next");
           }}
           disabled={disabled.next}
+          title={title.next}
         >
           {">"}
         </PageButton>

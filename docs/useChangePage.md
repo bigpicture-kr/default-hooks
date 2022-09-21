@@ -8,9 +8,9 @@ import { useChangePage } from "default-hooks";
 const Demo = () => {
   // get from your server
   const TOTAL_PAGE = 10;
-  const [currentPage, setCurrentPage] = useState<number>(0);
+  const [currentPage, setCurrentPage] = useState < number > 0;
 
-  const { handler, disabled } = useChangePage(
+  const { handler, disabled, title } = useChangePage(
     currentPage,
     setCurrentPage,
     TOTAL_PAGE
@@ -18,11 +18,11 @@ const Demo = () => {
   return (
     <FlexCenter>
       <button
-        title="go previous page"
         onClick={() => {
           handler("prev");
         }}
         disabled={disabled.prev}
+        title={title.prev}
       >
         {"<"}
       </button>
@@ -39,11 +39,11 @@ const Demo = () => {
         ))}
       </FlexBox>
       <button
-        title="go next page"
         onClick={() => {
           handler("next");
         }}
         disabled={disabled.next}
+        title={title.prev}
       >
         {">"}
       </button>

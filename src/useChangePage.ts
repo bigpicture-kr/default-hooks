@@ -25,9 +25,15 @@ const useChangePage = (
     };
   }, [currentPage, totalPage]);
 
+  const title = {
+    prev: "이전 페이지로",
+    next: "다음 페이지로"
+  };
+
   return {
     handler,
-    disabled
+    disabled,
+    title
   };
 };
 
