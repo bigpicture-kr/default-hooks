@@ -8,7 +8,7 @@ import { useChangePage } from "default-hooks";
 const Demo = () => {
   // get from your server
   const TOTAL_PAGE = 10;
-  const [currentPage, setCurrentPage] = useState < number > 0;
+  const [currentPage, setCurrentPage] = useState<number>(0);
 
   const { handler, disabled, title } = useChangePage(
     currentPage,

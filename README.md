@@ -46,3 +46,6 @@
 
 - [**Utils**](./docs/Utils.md)
   - [`useCheckBrowser`](./docs/useCheckBrowser.md) &mdash; get the browser where you logged in now
+
+- [**Side effect**](./docs/Utils.md)
+  - [`useAsyncEffect`](./docs/useAsyncEffect.md) &mdash; use async function in useEffect

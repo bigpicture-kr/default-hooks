@@ -5,3 +5,4 @@ export { default as useChangePage } from "./useChangePage";
 export { default as useMouseHover } from "./useMouseHover";
 export { default as useInterSection } from "./useInterSection";
 export { default as useOutsideClick } from "./useOutsideClick";
+export { default as useAsyncEffect } from "./useAsyncEffect";
