@@ -1,6 +1,6 @@
 {
   "name": "default-hooks",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "the most basic hooks needed to produce a react application",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -49,7 +49,6 @@
   },
   "dependencies": {
     "styled-components": "^5.3.5",
-    "styled-reset": "^4.4.2",
     "tslib": "^2.1.0"
   },
   "peerDependencies": {
