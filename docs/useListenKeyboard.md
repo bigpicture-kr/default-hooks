@@ -18,7 +18,7 @@ const Demo = () => {
   return (
     <div>
       <h1>feel free and click "b" key in your keyboard</h1>
-      <h3>you clicked {clickCount} now!</h3>
+      <h2>you clicked {clickCount} now!</h2>
     </div>
   );
 };
