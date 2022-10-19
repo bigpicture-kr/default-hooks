@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useEffect } from "react";
 
 const useOutsideClick = (
   ref: React.RefObject<HTMLElement>,
-  setter: Dispatch<SetStateAction<boolean>>
+  setter: Dispatch<SetStateAction<boolean>> | ((value: boolean) => void)
 ) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
