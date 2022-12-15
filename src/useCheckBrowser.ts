@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
+type Browser = "edge" | "firefox" | "opera" | "safari" | "chrome" | "other";
+
 const useCheckBrowser = () => {
-  const [browser, setBrowser] = useState<string>("");
+  const [browser, setBrowser] = useState<Browser>("other");
 
   useEffect(() => {
     const userAgent = navigator.userAgent;
@@ -19,6 +21,7 @@ const useCheckBrowser = () => {
       setBrowser("other");
     }
   }, []);
+
   return browser;
 };
 
