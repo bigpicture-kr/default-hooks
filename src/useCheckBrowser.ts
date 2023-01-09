@@ -9,7 +9,10 @@ type Browser =
   | "whale"
   | "brave"
   | "other"
-  | "ie";
+  | "ie"
+  | "inApp-kakao"
+  | "inApp-works"
+  | "inApp-naver";
 
 const useCheckBrowser = () => {
   const [browser, setBrowser] = useState<Browser>("other");
@@ -30,6 +33,12 @@ const useCheckBrowser = () => {
       setBrowser("safari");
     } else if (userAgent.match(/whale/i)) {
       setBrowser("whale");
+    } else if (userAgent.match(/kakao/i)) {
+      setBrowser("inApp-kakao");
+    } else if (userAgent.match(/naver/i)) {
+      setBrowser("inApp-naver");
+    } else if (userAgent.match(/worksmobile/i)) {
+      setBrowser("inApp-works");
     } else if (braveNavigator !== undefined) {
       setBrowser("brave");
     } else if (userAgent.search("trident") != -1 || userAgent.match(/msie/i)) {

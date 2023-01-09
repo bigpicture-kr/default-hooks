@@ -7,3 +7,7 @@
 ## 0.0.30 / 22.12.15
 
 1. Add browser List (ie, whale, brave)
+
+## 0.0.31 / 23.01.09
+
+1. Add inAppBrowser (kakao, worksmobile, naver)
