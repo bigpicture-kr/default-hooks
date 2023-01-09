@@ -11,3 +11,7 @@
 ## 0.0.31 / 23.01.09
 
 1. Add inAppBrowser (kakao, worksmobile, naver)
+
+## 0.0.32 / 23.01.09
+
+1. Change if - else if logic order
