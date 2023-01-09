@@ -15,3 +15,7 @@
 ## 0.0.32 / 23.01.09
 
 1. Change if - else if logic order
+
+## 0.0.33 / 23.01.09
+
+1. distinguish naver with naverworks

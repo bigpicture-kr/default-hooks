@@ -23,7 +23,7 @@ const useCheckBrowser = () => {
 
     if (userAgent.match(/kakao/i)) {
       setBrowser("inApp-kakao");
-    } else if (userAgent.match(/naver/i)) {
+    } else if (userAgent.match(/naver\(inapp/i)) {
       setBrowser("inApp-naver");
     } else if (userAgent.match(/worksmobile/i)) {
       setBrowser("inApp-works");
