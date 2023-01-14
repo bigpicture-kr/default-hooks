@@ -19,3 +19,7 @@
 ## 0.0.33 / 23.01.09
 
 1. distinguish naver with naverworks
+
+## 0.0.34 / 23.01.14
+
+1. Add useRouterFinish

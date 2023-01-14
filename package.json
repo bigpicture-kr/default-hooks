@@ -1,6 +1,6 @@
 {
   "name": "default-hooks",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "the most basic hooks needed to produce a react application",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -48,6 +48,7 @@
     "url": "https://github.com/bigpicture-kr/default-hooks/issues"
   },
   "dependencies": {
+    "next": "^13.1.2",
     "styled-components": "^5.3.5",
     "tslib": "^2.1.0"
   },
