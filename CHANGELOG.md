@@ -23,3 +23,8 @@
 ## 0.0.34 / 23.01.14
 
 1. Add useRouterFinish
+
+## 0.0.35 / 23.02.28
+
+1. update useInput
+   Add useCallback to onChange func
