@@ -61,7 +61,7 @@ const useInput = (
         setValue(_value);
       }
     },
-    []
+    [error]
   );
 
   return {
