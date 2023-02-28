@@ -24,7 +24,8 @@
 
 1. Add useRouterFinish
 
-## 0.0.35 / 23.02.28
+## 0.0.35 ~ 0.0.36 / 23.02.28
 
 1. update useInput
    Add useCallback to onChange func
+   delete dependency dept
