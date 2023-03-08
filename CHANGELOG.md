@@ -29,3 +29,8 @@
 1. update useInput
    Add useCallback to onChange func
    delete dependency dept
+
+## 0.0.38
+
+1. update useInput
+   Add maxLength param
