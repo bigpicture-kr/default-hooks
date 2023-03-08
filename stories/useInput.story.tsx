@@ -6,12 +6,19 @@ import Validator from "./util/Validator";
 
 const Demo = () => {
   const LIMIT = 10;
-  const name = useInput("initialName", [
-    {
-      validator: Validator.underLengthString(LIMIT),
-      errorText: `type under ${LIMIT}`
-    }
-  ]);
+  const name = useInput(
+    "",
+    [
+      {
+        validator: Validator.underLengthString(LIMIT),
+        errorText: `type under ${LIMIT}`,
+        option: {
+          hard: true
+        }
+      }
+    ],
+    10
+  );
   const { value, setValue, error } = name;
   return (
     <div>

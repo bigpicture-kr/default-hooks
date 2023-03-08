@@ -7,15 +7,17 @@ const useInput = (
     validator: (value: string) => boolean;
     errorText: string;
     option?: {
-      hard: boolean;
+      hard?: boolean;
     };
-  }[]
+  }[],
+  maxLength?: number
 ): {
   value: {
     value: string;
     onChange: (
       event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
     ) => void;
+    maxLength?: number;
   };
   setValue: Dispatch<SetStateAction<string>>;
   error: {
@@ -33,6 +35,8 @@ const useInput = (
       const {
         currentTarget: { value: _value }
       } = event;
+
+      if (maxLength && _value.length > maxLength) return;
 
       // 에러였던 요소들 다시 타이핑 시작하면 에러 해제
       if (error !== "") setError("");
@@ -65,7 +69,7 @@ const useInput = (
   );
 
   return {
-    value: { value, onChange },
+    value: { value, onChange, maxLength },
     setValue,
     error: { error, setError }
   };
